@@ -1,0 +1,151 @@
+﻿<Page x:Class="WpfApp5.View.Pages.RegistrationPage"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WpfApp5.View.Pages"
+  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    mc:Ignorable="d"
+  d:DesignHeight="700"
+  d:DesignWidth="1024"
+  FontFamily="Comic Sans MS">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Width="445"
+            Height="485"
+            CornerRadius="55"
+            BorderBrush="#008080"
+            BorderThickness="2"
+            Background="#C7FCEC"/>
+
+        <Grid Grid.ColumnSpan="2">
+            <StackPanel HorizontalAlignment="Left"
+                    VerticalAlignment="Top" Margin="82,119,0,0">
+                <StackPanel Margin="0 30 0 0">
+                    <TextBlock FontSize="26"
+                           FontWeight="SemiBold">
+                    <Run Text="Практическая работа "
+                         Foreground="#008080"/>
+                    <Run Text="№6"
+                         Foreground="#104742"/>
+                    </TextBlock>
+                    <TextBlock Text="Работа с SQLite"
+                           TextAlignment="Center"
+                           FontWeight="Regular"
+                           FontSize="15"
+                           Foreground="#104742"/>
+                    <materialDesign:PackIcon Kind="Database"
+                                         Margin="0 20 0 0"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         Foreground="#104742"
+                                         Height="110"
+                                         Width="100"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                        Margin="0 20 0 0">
+                    <materialDesign:PackIcon Kind="Email"
+                                         Width="25"
+                                         Height="25"
+                                         Margin="0 3 10 0"
+                                              Foreground="#104742"/>
+                    <TextBox Width="305"
+                           x:Name="TbLogin"
+                           FontWeight="Regular"
+                           Foreground="#104742"
+                           FontSize="15"
+                           materialDesign:HintAssist.Hint="Введите адрес электронной почты. . ."
+                           materialDesign:TextFieldAssist.HasClearButton="True"
+                           materialDesign:TextFieldAssist.UnderlineBrush="#104742"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+        Margin="0 20 0 0">
+                    <materialDesign:PackIcon Kind="Password"
+                         Width="25"
+                         Height="25"
+                         Margin="0 3 10 0"
+                                              Foreground="#104742"/>
+                    <PasswordBox Width="305"
+        
+           FontWeight="Regular"
+                           x:Name="PbPassword"
+           Foreground="#008080"
+           FontSize="15"
+          materialDesign:HintAssist.Hint="Введите пароль"
+         
+           materialDesign:TextFieldAssist.HasClearButton="True"
+           materialDesign:TextFieldAssist.UnderlineBrush="#FFFFFF"/>
+                </StackPanel>
+
+
+                <StackPanel Margin="0 20 0 0">
+                    <CheckBox Content="Отобразить пароль"
+                          Foreground="#104742"
+                          Background="#0A2E2B"
+                          Cursor="Hand"
+                          FontSize="15"/>
+                </StackPanel>
+                <StackPanel Margin="0 20 0 0"
+                        Orientation="Horizontal">
+                    <Button Width="220"
+                        Margin="0 0 20 0"
+                        x:Name="BtnCreat"
+                        Click="BtnCreat_Click"
+                        Height="50"
+                        Background="Transparent"
+                        BorderBrush="#008080"
+                        Foreground="#28B0A6"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        materialDesign:ButtonProgressAssist.Value="-1"
+                        materialDesign:ButtonProgressAssist.IndicatorForeground="#008080"
+                            materialDesign:ButtonProgressAssist.IndicatorBackground="#FFFFFF"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                        IsEnabled="{Binding DataContext.ControlsEnabled,
+                    RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Create"
+                                                 Margin="0 2 3 0"/>
+                            <TextBlock Text="Создать аккаут "/>
+
+                        </StackPanel>
+
+                    </Button>
+                    <Button Width="170"
+     
+     x:Name="BtnBack"
+     Click="BtnBack_Click"
+     Height="50"
+     Background="#145852"
+     BorderBrush="#28B0A6"
+     Foreground="#28B0A6"
+     Style="{StaticResource MaterialDesignRaisedButton}"
+     materialDesign:ButtonProgressAssist.Value="-1"
+     materialDesign:ButtonProgressAssist.IndicatorBackground="#FFFFFF"
+     materialDesign:ButtonProgressAssist.IndicatorForeground="#29B8AC"
+     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+     materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Terrain"
+                              Margin="0 2 3 0"
+                              Foreground="#0C3632"/>
+                            <TextBlock Text="Или Войти"
+                                   Foreground="#0C3632"/>
+
+                        </StackPanel>
+
+                    </Button>
+
+
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
